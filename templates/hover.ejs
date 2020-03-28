@@ -1,7 +1,5 @@
 <strong>
-    <%= obj.facility_name %>
+    #<%= obj.ticket_number %>: <%= obj.name %> | <%= obj.create_date %>
 </strong><br />
-<%= formatAddress(obj) %><br />
-<% if (obj.hours) { %>
-    Hours: <%= obj.hours %><br />
-<% } %>
+<%= obj.address %><br />
+<%= obj.request_type %>: <%= obj.summary_of_request %>

@@ -1,15 +1,24 @@
-<tr>                  
+<tr>  
     <td>
-        <%= obj.facility_name %>
-    </td>                  
+        #<%= obj.ticket_number %>
+    </td>    
     <td>
-        <%= formatAddress(obj) %><br />
-        (<a href='http://maps.google.com/?q=<%= formatAddress(obj) %>' target='_blank'>Get directions</a>)
+        <%= obj.create_date %>
+    </td>             
+    <td>
+        <%= obj.name %>
+    </td>                   
+    <td>
+        <a href='tel:+<%= obj.phone %>'><i class='fa fa-phone'></i> <%= obj.phone %></a><br />
+        <%= obj.address %><br />
+        (<a href='http://maps.google.com/?q=<%= obj.address %>+chicago' target='_blank'>Get directions</a>)
+        
     </td> 
     <td>
-        <%= obj.phone %>
+        <%= obj.request_type %>: <%= obj.summary_of_request %><br /> <%= obj.detail_of_request %>
     </td>                 
     <td>
-        <%= obj.hours %>
+        Symptoms: <%= obj.symptoms %><br />
+        Temp: <%= obj.temperature %>
     </td>
 </tr>

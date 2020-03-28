@@ -1,25 +1,24 @@
 <h4>
-    <%= obj.facility_name %>
-</h4>             
+    #<%= obj.ticket_number %>
+    <%= obj.name %>
+</h4>   
+<p><%= obj.create_date %></p>          
 <p>
-    <%= formatAddress(obj) %><br />
-    <%= obj.phone %><br />
-
-    <% if (obj.url) { %>
-        <a href='<%= obj.url %>' target='_blank'>Website</a>
-    <% } %>
+    <strong>Address:</strong> <%= obj.address %> (<a href='http://maps.google.com/?q=<%= obj.address %>+chicago' target='_blank'>Get directions</a>)<br />
+    <strong>Phone:</strong> <a href='tel:+<%= obj.phone %>'><i class='fa fa-phone'></i> <%= obj.phone %></a><br />
 </p>
 
-<% if (obj.cost) { %>
-    <p>
-        <strong>Cost</strong><br />
-        <%= obj.cost %>
-    </p>
-<% } %>
+<p>
+    <strong>Request type:</strong> <%= obj.request_type  %><br />
+    <strong>Summary:</strong> <%= obj.summary_of_request %><br />
+    <strong>Detail of request:</strong> <%= obj.detail_of_request %>
+</p>
 
-<% if (obj.hours) { %>
-    <p>
-        <strong>Hours</strong><br />
-        <%= obj.hours %>
-    </p>
-<% } %>
+<p>
+    <strong>Symptoms:</strong> <%= obj.symptoms %><br />
+    <strong>Temperature:</strong> <%= obj.temperature %><br />
+</p>
+
+<p>
+    <strong>Assigned to:</strong> <%= obj.assigned_to %>
+</p>

@@ -10,13 +10,13 @@ $(function() {
   CartoDbLib.initialize({
     map_centroid: [41.85754, -87.66231],
     defaultZoom:  11,
-    layerUrl:     'https://datamade.carto.com/api/v2/viz/3d861410-d645-4c10-a19d-ef01c1135441/viz.json',
-    tableName:    'flu_shot_locations_2014_present_2019_2020_season',
+    layerUrl:     'https://datamade.carto.com/api/v2/viz/d38188a7-1783-47b3-8352-a49635e6549c/viz.json',
+    tableName:    'mutualaidevent_logginggrid_view',
     userName:     'datamade',
-    fields :      'cartodb_id, the_geom, cost, facility_name, hours, phone, street1, street2, city, state, url',
-    listOrderBy: 'facility_name',
-    recordName: 'flu shot location',
-    recordNamePlural: 'flu shot locations',
+    fields :      'cartodb_id, the_geom, address, assigned_to, create_date, detail_of_request, name, phone , request_type , summary_of_request, symptoms, temperature, ticket_number',
+    listOrderBy: 'create_date DESC',
+    recordName: 'request',
+    recordNamePlural: 'requests',
     radius: 1610,
   });
 
