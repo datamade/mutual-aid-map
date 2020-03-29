@@ -13,7 +13,7 @@ $(function() {
     layerUrl:     'https://datamade.carto.com/api/v2/viz/d38188a7-1783-47b3-8352-a49635e6549c/viz.json',
     tableName:    'mutualaidevent_logginggrid_view',
     userName:     'datamade',
-    fields :      'cartodb_id, the_geom, address, assigned_to, create_date, detail_of_request, name, phone , request_type , summary_of_request, symptoms, temperature, ticket_number',
+    fields :      'cartodb_id, the_geom, found, assigned_to, create_date, detail_of_request, name, phone , request_type , summary_of_request, symptoms, temperature, ticket_number',
     listOrderBy: 'create_date DESC',
     recordName: 'request',
     recordNamePlural: 'requests',
@@ -73,4 +73,19 @@ $(function() {
 
 function formatAddress(prop) {
     return prop.street1 + " " + prop.street2 + " " + prop.city + " " + prop.state;
+}
+
+function obscureAddress(address){
+  // pluck first set of digits at the beginning of the address string
+  var myregexp = /^\d+/g;
+  var match = myregexp.exec(address);
+  var street_num = match[0];
+
+  // replaces last 2 digits with zeroes
+  var street_num_obscured = street_num.slice(0, -2) + "00";
+
+  // return obscured address
+  var obscured_address = address.replace(street_num, street_num_obscured);
+
+  return obscured_address;
 }
